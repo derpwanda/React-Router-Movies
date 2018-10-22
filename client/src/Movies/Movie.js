@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
+import MovieList from './MovieList';
 
 export default class Movie extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ export default class Movie extends Component {
 
   componentDidMount() {
     // change this line to grab the id passed on the URL
-    const id = 1;
+    const id = this.state.id;
     this.fetchMovie(id);
   }
 
@@ -45,6 +47,7 @@ export default class Movie extends Component {
     const { title, director, metascore, stars } = this.state.movie;
     return (
       <div className="save-wrapper">
+      <Link to={`/movies/${this.state.movie.id}`}>
         <div className="movie-card">
           <h2>{title}</h2>
           <div className="movie-director">
@@ -61,6 +64,7 @@ export default class Movie extends Component {
             </div>
           ))}
         </div>
+        </Link>
         <div className="save-button">Save</div>
       </div>
     );

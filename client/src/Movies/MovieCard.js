@@ -1,7 +1,9 @@
 import React from 'react';
 
-const MovieCard = props => {
-  return;
+function MovieCard(props) {
+  // const id = props.match.params.id;
+  // const movie = movies.find(movie => `${movie.id}`)
+  return ;
 };
 
 export default MovieCard;
