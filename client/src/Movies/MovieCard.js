@@ -1,23 +1,21 @@
 import React from 'react';
 
 function MovieCard(props) {
-  // const id = props.match.params.id;
-  // const movie = movies.find(movie => `${movie.id}`)
-  const { title, director, metascore, stars } = props.movie;
-
+  //const { title, director, metascore, stars } = this.state.movie;
+  //const { title, director, metascore, stars } = props.movie;
   return (
     <div className="movie-card">
-        <h2>{title}</h2>
+        <h2>{props.movie.title}</h2>
         <div className="movie-director">
-          Director: <em>{director}</em>
+          Director: <em>{props.movie.director}</em>
         </div>
         <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
+          Metascore: <strong>{props.movie.metascore}</strong>
         </div>
         <h3>Actors</h3>
 
-        {stars.map(star => (
-          <div key={star} className="movie-star">
+        {props.movie.stars.map(star => (
+          <div key={props.movie.star} className="movie-star">
             {star}
           </div>
         ))}
