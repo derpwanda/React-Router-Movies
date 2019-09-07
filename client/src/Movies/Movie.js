@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieCard from './MovieCard';
+
 import axios from 'axios';
 
 export default class Movie extends Component {
@@ -44,12 +45,15 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
 
-  //const { title, director, metascore, stars } = this.state.movie;
-  const {movie} = this.state;
+    const {movie} = this.state;
     return (
       <div className="save-wrapper">
         <MovieCard movie={movie}/>
-        <div className="save-button">Save</div>
+        <div 
+          onClick={() => this.saveMovie(movie)}
+          className="save-button">
+          Save
+        </div>
       </div>
     );
   }
